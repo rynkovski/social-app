@@ -59,6 +59,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.4",
+    "@playwright/test": "^1.47.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/canvas-confetti": "^1.6.4",
     "@types/markdown-it": "^14.1.1",
