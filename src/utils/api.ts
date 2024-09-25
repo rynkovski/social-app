@@ -2,7 +2,7 @@ import Axios from "axios";
 import { getCookie } from "cookies-next";
 
 const api = Axios.create({
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL: "https://social-app-backend-five.vercel.app/api/",
   headers: {
     "Content-Type": "application/json",
     accept: "application/json",
