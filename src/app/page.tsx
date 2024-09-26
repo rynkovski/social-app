@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-
 export default function Home() {
   const { data: patchNotes, isFetching } = useGetPatchNotes();
 
@@ -69,10 +68,11 @@ export default function Home() {
                 </AnimatedGradientText>
               </Link>
               <span className="text-md font-bold sm:text-lg md:text-2xl lg:text-4xl tracking-tight  flex flex-row items-center gap-1 sm:gap-2">
-               Social App
+                Social App
               </span>
               <div className="text-gray-600 dark:text-gray-300 text-sm sm:text-md md:text-lg">
-                bottom text 
+                A web application that allows users to organize meetings, make
+                bets, and complete quests.
               </div>
             </div>
             <div className="my-4 flex items-center space-x-4">
