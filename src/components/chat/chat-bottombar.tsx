@@ -9,6 +9,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Textarea } from "../ui/textarea";
 import { EmojiPicker } from "./emoji-picker";
 import { TMessage } from "./chat";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 interface ChatBottombarProps {
   sendMessage: (newMessage: TMessage) => void;
@@ -77,16 +83,24 @@ export default function ChatBottombar({ sendMessage }: ChatBottombarProps) {
             },
           }}
         >
-          <Textarea
-            autoComplete="off"
-            value={message}
-            ref={inputRef}
-            onKeyDown={handleKeyPress}
-            onChange={handleInputChange}
-            name="message"
-            placeholder="Write a message..."
-            className=" w-full border rounded-full flex items-center h-9 text-sm resize-none overflow-hidden bg-background"
-          ></Textarea>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Textarea
+                  disabled={true}
+                  autoComplete="off"
+                  value={message}
+                  ref={inputRef}
+                  onKeyDown={handleKeyPress}
+                  onChange={handleInputChange}
+                  name="message"
+                  placeholder="Write a message..."
+                  className=" w-full border rounded-full flex items-center h-9 text-sm resize-none overflow-hidden bg-background disabled:cursor-not-allowed disabled:opacity-50"
+                ></Textarea>
+              </TooltipTrigger>
+              <TooltipContent side="top">Work in progress...</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <div className="absolute right-2 bottom-0.5 hidden sm:block ">
             <EmojiPicker
               onChange={(value) => {
