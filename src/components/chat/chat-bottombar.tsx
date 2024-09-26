@@ -104,10 +104,10 @@ export default function ChatBottombar({ sendMessage }: ChatBottombarProps) {
           <div className="absolute right-2 bottom-0.5 hidden sm:block ">
             <EmojiPicker
               onChange={(value) => {
-                setMessage(message + value);
-                if (inputRef.current) {
-                  inputRef.current.focus();
-                }
+                // setMessage(message + value);
+                // if (inputRef.current) {
+                //   inputRef.current.focus();
+                // }
               }}
             />
           </div>
@@ -121,7 +121,7 @@ export default function ChatBottombar({ sendMessage }: ChatBottombarProps) {
               "h-9 w-9",
               "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white shrink-0"
             )}
-            onClick={handleSend}
+            // onClick={handleSend}
           >
             <SendHorizontal size={20} className="text-muted-foreground" />
           </Link>
@@ -133,7 +133,7 @@ export default function ChatBottombar({ sendMessage }: ChatBottombarProps) {
               "h-9 w-9",
               "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white shrink-0"
             )}
-            onClick={handleThumbsUp}
+            // onClick={handleThumbsUp}
           >
             <ThumbsUp size={20} className="text-muted-foreground" />
           </Link>
